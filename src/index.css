@@ -2,95 +2,113 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* MentorDesk Design System - Professional Teacher Dashboard */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core Colors - Light Theme */
+    --background: 210 20% 98%;
+    --foreground: 222 47% 11%;
 
+    /* Card surfaces */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 222 47% 11%;
 
+    /* Popover */
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 222 47% 11%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - Teal accent matching MentorDesk */
+    --primary: 174 50% 42%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary */
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 222 47% 11%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted */
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent */
+    --accent: 174 50% 95%;
+    --accent-foreground: 174 50% 30%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Status colors */
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --info: 199 89% 48%;
+    --info-foreground: 0 0% 100%;
 
-    --radius: 0.5rem;
+    /* Border & Input */
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 174 50% 42%;
 
-    --sidebar-background: 0 0% 98%;
+    --radius: 0.75rem;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    /* Sidebar - Matching the dark teal sidebar */
+    --sidebar-background: 174 45% 28%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 0 0% 100%;
+    --sidebar-primary-foreground: 174 45% 28%;
+    --sidebar-accent: 174 40% 35%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 174 40% 25%;
+    --sidebar-ring: 0 0% 100%;
 
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Custom MentorDesk colors */
+    --mentor-teal: 174 50% 42%;
+    --mentor-teal-light: 174 50% 95%;
+    --mentor-orange: 38 92% 50%;
+    --mentor-purple: 262 83% 58%;
+    --mentor-red: 0 84% 60%;
+    --mentor-green: 142 71% 45%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 222 47% 8%;
+    --foreground: 210 20% 98%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 222 47% 11%;
+    --card-foreground: 210 20% 98%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 20% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 174 50% 50%;
+    --primary-foreground: 222 47% 11%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 20% 98%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 174 40% 20%;
+    --accent-foreground: 174 50% 70%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 20% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 174 50% 50%;
+
+    --sidebar-background: 222 47% 8%;
+    --sidebar-foreground: 210 20% 90%;
+    --sidebar-primary: 174 50% 50%;
+    --sidebar-primary-foreground: 222 47% 8%;
+    --sidebar-accent: 217 33% 17%;
+    --sidebar-accent-foreground: 210 20% 98%;
+    --sidebar-border: 217 33% 17%;
+    --sidebar-ring: 174 50% 50%;
   }
 }
 
@@ -100,6 +118,102 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  /* Stat Card Styles */
+  .stat-card {
+    @apply bg-card rounded-xl p-4 border border-border shadow-sm transition-all hover:shadow-md;
+  }
+
+  .stat-card-icon {
+    @apply w-10 h-10 rounded-xl flex items-center justify-center;
+  }
+
+  /* Quick Action Card */
+  .quick-action-card {
+    @apply flex items-center gap-3 p-4 bg-card rounded-xl border border-border cursor-pointer 
+           transition-all hover:shadow-md hover:border-primary/30 hover:-translate-y-0.5;
+  }
+
+  /* Priority indicator */
+  .priority-dot {
+    @apply w-2 h-2 rounded-full flex-shrink-0;
+  }
+
+  .priority-high {
+    @apply bg-destructive;
+  }
+
+  .priority-medium {
+    @apply bg-warning;
+  }
+
+  .priority-low {
+    @apply bg-success;
+  }
+
+  /* Task Item */
+  .task-item {
+    @apply flex items-start gap-3 p-3 rounded-lg bg-secondary/50 transition-colors hover:bg-secondary;
+  }
+
+  /* Idea Card */
+  .idea-card {
+    @apply flex items-center gap-3 p-3 rounded-lg bg-accent/30 transition-colors hover:bg-accent/50;
+  }
+
+  /* Section Header */
+  .section-header {
+    @apply flex items-center justify-between mb-4;
+  }
+
+  .section-title {
+    @apply flex items-center gap-2 text-base font-semibold text-foreground;
+  }
+
+  .section-link {
+    @apply text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-1;
+  }
+}
+
+@layer utilities {
+  /* Animation utilities */
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-slide-in {
+    animation: slideIn 0.3s ease-out;
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent;
   }
 }
